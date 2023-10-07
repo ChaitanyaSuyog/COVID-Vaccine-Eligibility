@@ -1,8 +1,7 @@
 # COVID-Vaccine-Eligibility
 A COVID vaccine eligibility test that takes input from the user and determines whether she/he is eligible for vaccination or not. 
 <br>
-Some points to note:  
--The age is determined randomly
+Points to note:  
 <br>
 -The program is slightly video game-like
 <br>
