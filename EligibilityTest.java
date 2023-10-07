@@ -15,7 +15,6 @@ public class EligibilityTest {
 		while ((userName = scan.nextLine()).isEmpty()) {
 			System.out.println("Please enter a valid username: ");
 		}
-
 		checkEligibility(userName);
     }
 
@@ -28,13 +27,11 @@ public class EligibilityTest {
 		// Thread.sleep() ceases the execution of the thread for a specified time.
 		if (scan.nextLine().equals("T")) {
 			System.out.print("Measuring your temperature");
-			Thread.sleep(1000);
-			System.out.print(".");
-			Thread.sleep(1000);
-			System.out.print(".");
-			Thread.sleep(1000);
-			System.out.print(". ");
-			Thread.sleep(1000);
+			for (int i = 0; i < 4; i++) {
+				Thread.sleep(1000);
+				System.out.print(".");
+			}
+			System.out.println("");
 			System.out.print(userName + ", your temperature " +
 					"is at " + tempMeasure + " degrees.");
 			Thread.sleep(1000);
@@ -42,12 +39,10 @@ public class EligibilityTest {
 
 		else {
 			System.out.print("Skipping the temperature check");
-			Thread.sleep(1000);
-			System.out.print(".");
-			Thread.sleep(1000);
-			System.out.print(".");
-			Thread.sleep(1000);
-			System.out.print(".");
+			for (int i = 0; i < 4; i++) {
+				Thread.sleep(1000);
+				System.out.print(".");
+			}
 		}
 		System.out.println();
 
@@ -66,7 +61,6 @@ public class EligibilityTest {
 		try {
 			patientAge = scan.nextInt();
 		}
-
 		catch(InputMismatchException | IllegalStateException ex) {
 			System.out.println("Invalid age.");
 			return false;
@@ -82,12 +76,10 @@ public class EligibilityTest {
 		if (patientAge >= 45) {
 			System.out.println("Since you are " + patientAge + ", you are eligible for vaccination!");
 		}
-
 		else {
 			System.out.println("Unfortunately, we do not have vaccines ready for your age group (" + patientAge + " years old). " +
 					"Hopefully you will get them soon :)");
 		}
-
 		// All good and so return success.
 		return true;
 	}
